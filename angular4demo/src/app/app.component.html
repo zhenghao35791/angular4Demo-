@@ -18,9 +18,18 @@
   <br>-->
   <ul class="heroes">
     <!-- ngFor的*前缀表示<li>及其子元素组成了一个主控模板。 -->
-    <li *ngFor="let hero of heroes">
+    <li *ngFor="let hero of heroes"
+        [class.selected]="hero ===selectedHero"
+        (click)="onSelect(hero)">
       <span class="badge">{{hero.id}}</span> {{hero.name}}
     </li>
   </ul>
+
+<!--
+  在等号的左边，是方括号围绕的hero属性，这表示它是属性绑定表达式的目标。
+  我们要绑定到的目标属性必须是一个输入属性，否则Angular会拒绝绑定，并抛出一个错误。
+-->
+
+  <hero-detail [hero]="selectedHero"></hero-detail>
 </div>
 
