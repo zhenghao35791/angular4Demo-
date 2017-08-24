@@ -28,8 +28,10 @@
 <!--
   在等号的左边，是方括号围绕的hero属性，这表示它是属性绑定表达式的目标。
   我们要绑定到的目标属性必须是一个输入属性，否则Angular会拒绝绑定，并抛出一个错误。
+  父组件AppComponent会告诉子组件HeroDetailComponent要显示哪个英雄，
+   告诉的方法是把它的selectedHero属性绑定到HeroDetailComponent的hero属性上。 这种绑定是这样的
 -->
 
-  <hero-detail [hero]="selectedHero"></hero-detail>
+  <hero-detail [heroDetail]="selectedHero"></hero-detail>
 </div>
 
